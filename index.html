@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -8,53 +8,75 @@
      <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body>
-     <header >
+<body id="page">
+     <header class="sticky top-0">
         <div class="navbar bg-base-100 bg-[#FFEEE6] p-3">
             <div class="navbar-start">
           
-             <button class="btn bg-[#B4F461] text-black">Blog</button>
+             <button class="btn bg-[#B4F461] text-black" id="blg">Blog</button>
             </div>
             <div class="navbar-center block ">
-                <h1 class="flex items-center justify-between"><img src="./assets/logo.png" alt="">Donate Bangladesh</h1>
+                <h1 class="flex items-center justify-  gap-3 text-xl font-semibold"><img src="./assets/logo.png" alt="">Donate Bangladesh</h1>
             </div>
-            <div class="navbar-end">
-            <p class="flex items-center justify-between"><img src="./assets/coin.png" alt="">5500BDT</p>
+            <div class="navbar-end  ">
+              <div class="hidden lg:block">
+                <p class="flex items-center   justify-between font-medium text-xl gap-2"><img src="./assets/coin.png" alt=""><span id="collection">5500</span>BDT</p>
+              </div>
+            
             </div>
           </div>
 
      </header>
      <main>
-        <div class="flex justify-center items-center  gap-6 mt-6">
+        <div class="flex justify-center items-center bg-white gap-6 py-6 sticky top-16">
             <button class="btn " id="btn-1" onclick="bg()">Donation</button>
             <button class="btn " id="btn-2" onclick="bg_history()">History</button>
         </div>
 
-         <section class="w-[70%] mx-auto px-0 mt-16">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+         <section class="w-[70%] mx-auto px-0 mt-16  section-1 " id="cards">
+          
+            <div class="flex flex-col md:flex-row justify-between  items-center gap-4">
               <img src="./assets/noakhali.png" alt="">
-              <div class="flex flex-col justify-between ">
-                <button class=" btn w-[20%] flex"><img src="./assets/coin.png" alt="">0BDT</button>
-                <h1 class="font-bold text-2xl my-4">Donate for Flood at Noakhali, Bangladesh</h1>
+              <div class="flex flex-col justify-  " id="">
+                
+                <button class=" btn w-auto flex"><img src="./assets/coin.png" alt=""><span id="alredy-donated">0</span>BDT</button>
+                <h1 class="font-bold text-2xl my-4" id="source1">Donate for Flood at Noakhali, Bangladesh</h1>
                 <p class="text-base font-normal my-4"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-             <input type="number" placeholder="Write Donation Amount" class="my-4 p-4 border-2 rounded">
-             <button class="btn bg-[#B4F461]">Donate Now</button>
+             <input type="number" placeholder="Write Donation Amount" class="my-4 p-4 border-2 rounded" id="amount">
+             <button class="btn bg-[#B4F461] " id="done">Donate Now </button>
+        
             </div>
             </div>
-            <div class="flex flex-col md:flex-row  justify-between items-center gap-6 mt-16">
+            <div class="modal-box hidden bg-white  rounded-xl absolute lg:top-60 top-96 md:w-[60%]  w-full h-[40%] p-4 lg:left-96 left-4" id="modal">
+      <div class="flex flex-col justify-center items-center">
+        <h3 class="text-lg font-bold mb-2">Congrats!</h3>
+        <img src="./assets/coin.png" alt="">
+        <p class="py-4">You Have Donated to Humankind</p>
+        <h1>Successfully</h1>
+        <div class="modal-action ">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn" id="close">Close Confirmation</button>
+          </form>
+      </div>
+             
+                </div>
+          
+           </div>
+            <div class="flex flex-col md:flex-row  justify-  items-center gap-6 mt-16">
                 <img src="./assets/feni.png" alt="">
-                <div class="flex flex-col justify-between ">
-                  <button class=" btn w-[20%] flex"><img src="./assets/coin.png" alt="">0BDT</button>
+                <div class="flex flex-col justify-  ">
+                  <button class=" btn w-auto flex"><img src="./assets/coin.png" alt="">0 BDT</button>
                   <h1 class="font-bold text-2xl my-4">Donate for Flood at Noakhali, Bangladesh</h1>
                   <p class="text-base font-normal my-4"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
                <input type="number" placeholder="Write Donation Amount" class="my-4 p-4 border-2 rounded">
-               <button class="btn bg-[#B4F461]">Donate Now</button>
+               <button class="btn bg-[#B4F461]" >Donate Now</button>
               </div>
               </div>
-              <div class="flex flex-col md:flex-row  justify-between items-center gap-6 mt-16">
+              <div class="flex flex-col md:flex-row  justify-  items-center gap-6 mt-16">
                 <img src="./assets/quota-protest.png" alt="">
-                <div class="flex flex-col justify-between ">
-                  <button class=" btn w-[20%] flex"><img src="./assets/coin.png" alt="">0BDT</button>
+                <div class="flex flex-col justify-  ">
+                  <button class=" btn w-[50%] flex"><img src="./assets/coin.png" alt="">0BDT</button>
                   <h1 class="font-bold text-2xl my-4">Donate for Flood at Noakhali, Bangladesh</h1>
                   <p class="text-base font-normal my-4"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
                <input type="number" placeholder="Write Donation Amount" class="my-4 p-4 border-2 rounded">
@@ -63,29 +85,14 @@
               </div>
          </section>
 
-         <section class="md:w-[70%] mx-auto p-0 mt-16 w-full">
-            <div class="collapse collapse-arrow bg-base-200 mb-3 rounded-xl">
-                <input type="radio" name="my-accordion-2" checked="checked" />
-                <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-                <div class="collapse-content">
-                  <p>hello</p>
-                </div>
-              </div>
-              <div class="collapse collapse-arrow bg-base-200 mb-3 rounded-xl">
-                <input type="radio" name="my-accordion-2" />
-                <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-                <div class="collapse-content">
-                  <p>hello</p>
-                </div>
-              </div>
-              <div class="collapse collapse-arrow bg-base-200 mb-3 rounded-xl">
-                <input type="radio" name="my-accordion-2" />
-                <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-                <div class="collapse-content">
-                  <p>hello</p>
-                </div>
-              </div>
-         </section>
+          <section class="section2 hidden mx-auto px-0" id="history">
+     
+          <div class="rounded-xl">
+           
+           
+          </div>
+          </section>
+        
      </main>
     
     <script src="./utility.js"></script>
