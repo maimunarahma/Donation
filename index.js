@@ -97,6 +97,8 @@
           let sum=parseFloat(find_tag('collection').innerText) ;
           sum+=sent3;
           find_tag('collection').innerText=sum;
+        
+         //  collection-blg
           console.log(x);
           find_tag('modal3').showModal();
           const div=document.createElement('div');
@@ -123,11 +125,12 @@
      
     
      })
-    find_tag('blg').addEventListener('click',function(){
+    find_tag('blg').addEventListener('click',function(event){
+      event.preventDefault();
         window.location.href='blog.html';
+
         find_tag('blg').innerText='Home';
-        find_tag('collection').innerText=parseFloat(find_tag('amount3').value)+parseFloat(find_tag('alredy-donated3').innerText)+
-        parseFloat(find_tag('amount2').value)+parseFloat(find_tag('alredy-donated2').innerText)+parseFloat(find_tag('amount').value)+parseFloat(find_tag('alredy-donated').innerText);
+      //   document.getElementById('collection-blg').innerText = document.getElementById('collection').innerText;
 
     })
 

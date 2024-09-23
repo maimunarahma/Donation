@@ -22,7 +22,7 @@
         </div>
         <div class="navbar-end  ">
           <div class="hidden lg:block">
-            <p class="flex items-center   justify-between font-medium text-xl gap-2"><img src="./assets/coin.png" alt=""><span id="collection">5500</span>BDT</p>
+            <p class="flex items-center   justify-between font-medium text-xl gap-2"><img src="./assets/coin.png" alt=""><span id="collection-blg">5500</span>BDT</p>
           </div>
         
         </div>
@@ -85,6 +85,7 @@
       find_tag('home').addEventListener('click',function(){
       window.location.href='index.html';
       find_tag('home').innerText='Blog';
+      document.getElementById('collection-blg').innerText =document.getElementById('collection').innerText;
   })
      }
   </script>
