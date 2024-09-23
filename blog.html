@@ -56,7 +56,16 @@
       <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
       <div class="collapse-content">
         <p>
-          
+          Event delegation is a technique in JavaScript where you attach a single event listener to a parent element instead of attaching separate listeners to each child element. 
+          event delegation allows to handle events on those dynamically created elements
+           document.getElementById('id').addEventListener('click', function(event) {
+            if (condition) {
+              reponse in a way
+            }
+            else {
+            show alert
+            }
+        });
         </p>
       </div>
     </div>
