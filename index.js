@@ -28,12 +28,14 @@
  
 
    find_tag('done').addEventListener('click',function(){
-    const sent=parseFloat(find_tag('amount').value);
+    let sent=parseFloat(find_tag('amount').value);
     if(sent>0){
-        const x=parseFloat(find_tag('alredy-donated').innerText);
-        const total=sent+x;
+        let x=parseFloat(find_tag('alredy-donated').innerText);
+        let total=sent+x;
         find_tag('alredy-donated').innerText=total;
-        find_tag('collection').innerText=parseFloat(find_tag('collection').innerText)+total;
+        let sum=parseFloat(find_tag('collection').innerText);
+        sum+=total;
+        find_tag('collection').innerText=sum;
         console.log(total);
         find_tag('modal').style.display='block';
         const div=document.createElement('div');
@@ -41,26 +43,100 @@
        const m=new Date();
        const hr=m.getHours();
        const mnt=m.getMinutes();
-       const sec=m.getSeconds()
+       const sec=m.getSeconds();
        const day=m.getDate();
       const mnth=m.getMonth()+1;
       const yr=m.getFullYear();
-      div.classList.add('rounded-xl,p-4,border-8');
+       const title=find_tag('source1').innerText;
+      find_tag('history').classList.add('rounded-xl','border-4','h-[30%]',  'w-3/4');
      div.innerHTML= ` 
-     <h1>${sent} </h1>
-     <p> Date: ${day}
+     <h1>${sent} Taka ${title}</h1>
+     <p> Date: ${day} ${yr} ${hr}:${mnt}:${sec}  </p>
  `;
     find_tag('history').appendChild(div);
         
-      //   find_tag('close').addEventListener('click',function(){
-      //    find_tag('modal').style.display='hidden';
-       
-      //   })
-     }
+      
+   }
      else{
       alert('Invalid Amount');
      }
    })
+   find_tag('done2').addEventListener('click',function(){
+      let sent2=parseFloat(find_tag('amount2').value);
+      console.log(sent2);
+      if( sent2>0){
+         let x = parseFloat(find_tag('alredy-donated2').innerText) || 0;
+          let total2=sent2+x;
+          find_tag('alredy-donated2').innerText=total2;
+          let sum=parseFloat(find_tag('collection').innerText);
+          sum+=total2;
+          find_tag('collection').innerText=sum;
+          console.log(x);
+          find_tag('modal').style.display='block';
+          const div=document.createElement('div');
+   
+         const m=new Date();
+         const hr=m.getHours();
+         const mnt=m.getMinutes();
+         const sec=m.getSeconds();
+         const day=m.getDate();
+        const mnth=m.getMonth()+1;
+        const yr=m.getFullYear();
+         const title=find_tag('source2').innerText;
+        find_tag('history').classList.add('rounded-xl','border-4','h-[30%]',  'w-3/4');
+       div.innerHTML= ` 
+       <h1>${sent2} Taka ${title}</h1>
+       <p> Date: ${day} ${yr} ${hr}:${mnt}:${sec}  </p>
+   `;
+      find_tag('history').appendChild(div);
+          
+        
+     }
+       else{
+        alert('Invalid Amount');
+       }
+     })
+
+   
+     
+     find_tag('done3').addEventListener('click',function(){
+      let sent3=parseFloat(find_tag('amount3').value);
+      console.log(sent3);
+      if( sent3>0){
+         let x = parseFloat(find_tag('alredy-donated3').innerText) || 0;
+         //  let total3=sent3+x;
+          x+=sent3
+          find_tag('alredy-donated3').innerText=x;
+          let sum=parseFloat(find_tag('collection').innerText);
+          sum+=x;
+          find_tag('collection').innerText=sum;
+          console.log(x);
+          find_tag('modal').style.display='block';
+          const div=document.createElement('div');
+   
+         const m=new Date();
+         const hr=m.getHours();
+         const mnt=m.getMinutes();
+         const sec=m.getSeconds();
+         const day=m.getDate();
+        const mnth=m.getMonth()+1;
+        const yr=m.getFullYear();
+         const title=find_tag('source3').innerText;
+        find_tag('history').classList.add('rounded-xl','border-4','h-[30%]',  'w-3/4');
+       div.innerHTML= ` 
+       <h1>${sent3} Taka ${title}</h1>
+       <p> Date: ${day} ${yr} ${hr}:${mnt}:${sec}  </p>
+   `;
+      find_tag('history').appendChild(div);
+          
+        
+     }
+       else{
+        alert('Invalid Amount');
+       }
+     })
+
+
    find_tag('close').addEventListener('click',function(){
       find_tag('modal').classList.remove('modal-box');
       find_tag('modal').style.display = 'none'; 
