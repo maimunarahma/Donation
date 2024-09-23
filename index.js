@@ -34,7 +34,7 @@
         let total=sent+x;
         find_tag('alredy-donated').innerText=total;
         let sum=parseFloat(find_tag('collection').innerText);
-        sum+=total;
+        sum-=total;
         find_tag('collection').innerText=sum;
         console.log(total);
         find_tag('modal1').showModal();
@@ -63,7 +63,7 @@
           let total2=sent2+x;
           find_tag('alredy-donated2').innerText=total2;
           let sum=parseFloat(find_tag('collection').innerText);
-          sum+=total2;
+          sum-=total2;
           find_tag('collection').innerText=sum;
           console.log(x);
           find_tag('modal2').showModal();
@@ -95,7 +95,7 @@
           x+=sent3;
           find_tag('alredy-donated3').innerText=x;
           let sum=parseFloat(find_tag('collection').innerText) ;
-          sum+=sent3;
+          sum-=sent3;
           find_tag('collection').innerText=sum;
         
          //  collection-blg
