@@ -147,6 +147,9 @@
      })
     find_tag('blg').addEventListener('click',function(){
         window.location.href='blog.html';
+        find_tag('blg').innerText='Home';
     })
+
+   
 
       

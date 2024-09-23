@@ -4,31 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-    <h1>a</h1>
-    <div class="join join-vertical w-1/2">
-        <div class="collapse collapse-arrow join-item border-base-300 border">
-          <input type="radio" name="my-accordion-4" checked="checked" />
-          <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div class="collapse-content">
-            <p>hello</p>
-          </div>
+<body >
+    
+  <header class="sticky top-0 ">
+    <div class="navbar bg-base-100 bg-[#FFEEE6] p-3">
+        <div class="navbar-start">
+      
+         <button class="btn bg-[#B4F461] text-black" id="home" onclick="home()" >Home
+         </button>
         </div>
-        <div class="collapse collapse-arrow join-item border-base-300 border">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div class="collapse-content">
-            <p>hello</p>
-          </div>
+        <div class="navbar-center block ">
+            <h1 class="flex items-center justify-  gap-3 text-xl font-semibold"><img src="./assets/logo.png" alt="">Donate Bangladesh</h1>
         </div>
-        <div class="collapse collapse-arrow join-item border-base-300 border">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div class="collapse-content">
-            <p>hello</p>
+        <div class="navbar-end  ">
+          <div class="hidden lg:block">
+            <p class="flex items-center   justify-between font-medium text-xl gap-2"><img src="./assets/coin.png" alt=""><span id="collection">5500</span>BDT</p>
           </div>
+        
         </div>
       </div>
+
+ </header>
+  <section class="mx-auto px-0 w-[80%] border-4 mt-8">
+    
+    <div class="join join-vertical w-full  py-7 my-24">
+    <div class="collapse collapse-arrow join-item  border ">
+      <input type="radio" name="my-accordion-4" checked="checked" />
+      <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+      <div class="collapse-content">
+        <p>hello</p>
+      </div>
+    </div>
+    <div class="collapse collapse-arrow join-item border-base-300 border">
+      <input type="radio" name="my-accordion-4" />
+      <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+      <div class="collapse-content">
+        <p>hello</p>
+      </div>
+    </div>
+    <div class="collapse collapse-arrow join-item border-base-300 border">
+      <input type="radio" name="my-accordion-4" />
+      <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+      <div class="collapse-content">
+        <p>hello</p>
+      </div>
+    </div>
+  </div>
+</section>
+  <script src="./utility.js"></script>
+  <script src="./index.js"></script>
+  <script>
+     function home(){
+      find_tag('home').addEventListener('click',function(){
+      window.location.href='index.html';
+      find_tag('home').innerText='Blog';
+  })
+     }
+  </script>
 </body>
 </html>
