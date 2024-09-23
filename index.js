@@ -29,11 +29,12 @@
 
    find_tag('done').addEventListener('click',function(){
     let sent=parseFloat(find_tag('amount').value);
-    if(sent>0){
+    let sum=parseFloat(find_tag('collection').innerText);
+    if(sent>0 && sent<=sum){
         let x=parseFloat(find_tag('alredy-donated').innerText);
         let total=sent+x;
         find_tag('alredy-donated').innerText=total;
-        let sum=parseFloat(find_tag('collection').innerText);
+       
         sum-=total;
         find_tag('collection').innerText=sum;
         console.log(total);
@@ -42,10 +43,12 @@
  
       
        const title=find_tag('source1').innerText;
-       find_tag('history').classList.add('rounded-xl',  'w-3/4','py-4');
+       find_tag('history').classList.add( 'w-3/4','py-4');
      div.innerHTML= ` 
-      <h1 class="font-bold text-2xl"> ${sent} Taka ${title}</h1>
-     <p> Date: ${day_name()} ${mnth_name()} ${day_yr()}  ${time()}  </p>
+        <div class=" border-2 my-2 border-black rounded-xl">
+      <h1 class="font-bold text-2xl p-3"> ${sent} Taka ${title}</h1>
+     <p class="p-3"> Date: ${day_name()} ${mnth_name()} ${day_yr()}  ${time()}  </p>
+     </div>
  `;
     find_tag('history').appendChild(div);
         
@@ -57,12 +60,13 @@
    })
    find_tag('done2').addEventListener('click',function(){
       let sent2=parseFloat(find_tag('amount2').value);
+      let sum=parseFloat(find_tag('collection').innerText);
       console.log(sent2);
-      if( sent2>0){
+      if( sent2>0 && sent2<=sum){
          let x = parseFloat(find_tag('alredy-donated2').innerText);
           let total2=sent2+x;
           find_tag('alredy-donated2').innerText=total2;
-          let sum=parseFloat(find_tag('collection').innerText);
+         
           sum-=total2;
           find_tag('collection').innerText=sum;
           console.log(x);
@@ -70,10 +74,14 @@
           const div=document.createElement('div');
    
          const title=find_tag('source2').innerText;
-         find_tag('history').classList.add('rounded-xl',  'w-3/4','py-4');
+         find_tag('history').classList.add(  'w-3/4','py-4');
        div.innerHTML= ` 
-        <h1 class="font-bold text-2xl"> ${sent2} Taka ${title}</h1>
-     <p> Date: ${day_name()} ${mnth_name()} ${day_yr()}  ${time()}  </p>
+       <div class=" border-2 my-2 border-black rounded-xl">
+           <h1 class="font-bold text-2xl p-3"> ${sent2} Taka ${title}</h1>
+     <p class="p-3"> Date: ${day_name()} ${mnth_name()} ${day_yr()}  ${time()}  </p>
+       </div>
+
+     
    `;
       find_tag('history').appendChild(div);
           
@@ -88,13 +96,14 @@
      
      find_tag('done3').addEventListener('click',function(){
       let sent3=parseFloat(find_tag('amount3').value);
+      let sum=parseFloat(find_tag('collection').innerText) ;
       console.log(sent3);
-      if( sent3>0){
+      if( sent3>0 && sent3<=sum){
          let x = parseFloat(find_tag('alredy-donated3').innerText) ;
          //  let total3=sent3+x;
           x+=sent3;
           find_tag('alredy-donated3').innerText=x;
-          let sum=parseFloat(find_tag('collection').innerText) ;
+         
           sum-=sent3;
           find_tag('collection').innerText=sum;
         
@@ -104,10 +113,12 @@
           const div=document.createElement('div');
    
          const title=find_tag('source3').innerText;
-        find_tag('history').classList.add('rounded-xl',  'w-3/4','py-4');
+        find_tag('history').classList.add( 'w-3/4','py-4');
        div.innerHTML= ` 
-       <h1 class="font-bold text-2xl"> ${sent3} Taka ${title}</h1>
-      <p> Date: ${day_name()} ${mnth_name()} ${day_yr()}  ${time()}  </p>
+          <div class=" border-2 my-2 border-black rounded-xl">
+       <h1 class="font-bold text-2xl p-3"> ${sent3} Taka ${title}</h1>
+      <p class="p-3"> Date: ${day_name()} ${mnth_name()} ${day_yr()}  ${time()}  </p>
+      </div>
    `;
       find_tag('history').appendChild(div);
           

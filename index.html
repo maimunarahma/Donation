@@ -6,12 +6,18 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
      <script src="https://cdn.tailwindcss.com"></script>
-
+ <style>
+        input[type="number"]::-webkit-inner-spin-button, 
+        input[type="number"]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0;
+           }
+ </style>
 </head>
 <body id="page">
      <header class="sticky top-0 mb-4">
-        <div class="navbar bg-base-100 bg-[#FFEEE6] py-3">
-            <div class="navbar-start">
+        <div class="navbar bg-base-100 bg-[#FFEEE6] bg-opacity-60 py-3 backdrop-blur-md ">
+            <div class="navbar-start ">
           
              <button class="btn bg-[#B4F461] text-black" id="blg">Blog</button>
             </div>
@@ -28,7 +34,7 @@
 
      </header>
      <main>
-        <div class="flex justify-center items-center bg-white   gap-6 py-6 sticky top-16">
+        <div class="flex justify-center items-center bg-white  bg-opacity-50  gap-6 py-6 sticky top-16 backdrop-blur-md ">
             <button class="btn bg-[#B4F461] " id="btn-1" onclick="bg()">Donation</button>
             <button class="btn " id="btn-2" onclick="bg_history()">History</button>
         </div>
@@ -126,6 +132,10 @@
         
      </main>
     
+        <footer class="bg-[#FFEEE6] mt-6 p-8">
+          <h4 class="text-center text-sm font-medium">All rights are reserved @2024</h4>
+        </footer>
+
     <script src="./utility.js"></script>
      <script src="./index.js"></script>
 </body>
