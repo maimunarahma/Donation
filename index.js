@@ -45,13 +45,15 @@
        const mnt=m.getMinutes();
        const sec=m.getSeconds();
        const day=m.getDate();
-      const mnth=m.getMonth()+1;
+      const mnth=m.getMonth();
       const yr=m.getFullYear();
+      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      const months = ["Jan","feb", "March", "April", "May", "June", "July", "August", "Sep" ,"Oct" ,"Nov", "Dec"];
        const title=find_tag('source1').innerText;
-      find_tag('history').classList.add('rounded-xl','border-4','h-[30%]',  'w-3/4');
+       find_tag('history').classList.add('rounded-xl',  'w-3/4','py-4');
      div.innerHTML= ` 
-     <h1>${sent} Taka ${title}</h1>
-     <p> Date: ${day} ${yr} ${hr}:${mnt}:${sec}  </p>
+      <h1 class="font-bold text-2xl"> ${sent} Taka ${title}</h1>
+     <p> Date: ${days[m.getDay()]} ${months[m.getMonth()]} ${day} ${yr} ${hr}:${mnt-1}:${sec}  </p>
  `;
     find_tag('history').appendChild(div);
         
@@ -83,9 +85,9 @@
         const mnth=m.getMonth()+1;
         const yr=m.getFullYear();
          const title=find_tag('source2').innerText;
-        find_tag('history').classList.add('rounded-xl','border-4','h-[30%]',  'w-3/4');
+         find_tag('history').classList.add('rounded-xl',  'w-3/4','py-4');
        div.innerHTML= ` 
-       <h1>${sent2} Taka ${title}</h1>
+        <h1 class="font-bold text-2xl"> ${sent2} Taka ${title}</h1>
        <p> Date: ${day} ${yr} ${hr}:${mnt}:${sec}  </p>
    `;
       find_tag('history').appendChild(div);
@@ -106,7 +108,7 @@
          let x = parseFloat(find_tag('alredy-donated3').innerText) || 0;
          //  let total3=sent3+x;
           x+=sent3
-          find_tag('alredy-donated3').innerText=x;
+          find_tag('alredy-donated3').innerText=x+sent3;
           let sum=parseFloat(find_tag('collection').innerText);
           sum+=x;
           find_tag('collection').innerText=sum;
@@ -122,9 +124,9 @@
         const mnth=m.getMonth()+1;
         const yr=m.getFullYear();
          const title=find_tag('source3').innerText;
-        find_tag('history').classList.add('rounded-xl','border-4','h-[30%]',  'w-3/4');
+        find_tag('history').classList.add('rounded-xl',  'w-3/4','py-4');
        div.innerHTML= ` 
-       <h1>${sent3} Taka ${title}</h1>
+       <h1 class="font-bold text-2xl"> ${sent3} Taka ${title}</h1>
        <p> Date: ${day} ${yr} ${hr}:${mnt}:${sec}  </p>
    `;
       find_tag('history').appendChild(div);
@@ -140,6 +142,7 @@
    find_tag('close').addEventListener('click',function(){
       find_tag('modal').classList.remove('modal-box');
       find_tag('modal').style.display = 'none'; 
+     
     
      })
     find_tag('blg').addEventListener('click',function(){
