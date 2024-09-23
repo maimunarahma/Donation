@@ -37,7 +37,7 @@
         sum+=total;
         find_tag('collection').innerText=sum;
         console.log(total);
-        find_tag('modal').style.display='block';
+        find_tag('modal1').showModal();
         const div=document.createElement('div');
  
       
@@ -66,7 +66,7 @@
           sum+=total2;
           find_tag('collection').innerText=sum;
           console.log(x);
-          find_tag('modal').style.display='block';
+          find_tag('modal2').showModal();
           const div=document.createElement('div');
    
          const title=find_tag('source2').innerText;
@@ -98,7 +98,7 @@
           sum+=sent3;
           find_tag('collection').innerText=sum;
           console.log(x);
-          find_tag('modal').style.display='block';
+          find_tag('modal3').showModal();
           const div=document.createElement('div');
    
          const title=find_tag('source3').innerText;
@@ -126,6 +126,9 @@
     find_tag('blg').addEventListener('click',function(){
         window.location.href='blog.html';
         find_tag('blg').innerText='Home';
+        find_tag('collection').innerText=parseFloat(find_tag('amount3').value)+parseFloat(find_tag('alredy-donated3').innerText)+
+        parseFloat(find_tag('amount2').value)+parseFloat(find_tag('alredy-donated2').innerText)+parseFloat(find_tag('amount').value)+parseFloat(find_tag('alredy-donated').innerText);
+
     })
 
    
