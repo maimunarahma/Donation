@@ -67,7 +67,7 @@
       let sent2=parseFloat(find_tag('amount2').value);
       console.log(sent2);
       if( sent2>0){
-         let x = parseFloat(find_tag('alredy-donated2').innerText) || 0;
+         let x = parseFloat(find_tag('alredy-donated2').innerText);
           let total2=sent2+x;
           find_tag('alredy-donated2').innerText=total2;
           let sum=parseFloat(find_tag('collection').innerText);
@@ -105,12 +105,12 @@
       let sent3=parseFloat(find_tag('amount3').value);
       console.log(sent3);
       if( sent3>0){
-         let x = parseFloat(find_tag('alredy-donated3').innerText) || 0;
+         let x = parseFloat(find_tag('alredy-donated3').innerText) ;
          //  let total3=sent3+x;
-          x+=sent3
-          find_tag('alredy-donated3').innerText=x+sent3;
-          let sum=parseFloat(find_tag('collection').innerText);
-          sum+=x;
+          x+=sent3;
+          find_tag('alredy-donated3').innerText=x;
+          let sum=parseFloat(find_tag('collection').innerText) ;
+          sum+=sent3;
           find_tag('collection').innerText=sum;
           console.log(x);
           find_tag('modal').style.display='block';
