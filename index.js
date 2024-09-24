@@ -26,8 +26,10 @@
  }
 
  
+ const elmnt=getElementByClassNameAndIndex('done',0);
+  if(elmnt){
 
-   find_tag('done').addEventListener('click',function(){
+   elmnt.addEventListener('click',function(){
     let sent=parseFloat(find_tag('amount').value);
     let sum=parseFloat(find_tag('collection').innerText);
     if(sent>0 && sent<=sum){
@@ -58,7 +60,12 @@
       alert('Invalid Amount');
      }
    })
-   find_tag('done2').addEventListener('click',function(){
+}
+
+const elmnt2=getElementByClassNameAndIndex('done',1);
+if(elmnt2){
+
+   elmnt2.addEventListener('click',function(){
       let sent2=parseFloat(find_tag('amount2').value);
       let sum=parseFloat(find_tag('collection').innerText);
       console.log(sent2);
@@ -92,9 +99,13 @@
        }
      })
 
+}
    
+const elmnt3=getElementByClassNameAndIndex('done',2);
+if(elmnt3){
+
      
-     find_tag('done3').addEventListener('click',function(){
+     elmnt3.addEventListener('click',function(){
       let sent3=parseFloat(find_tag('amount3').value);
       let sum=parseFloat(find_tag('collection').innerText) ;
       console.log(sent3);
@@ -128,7 +139,7 @@
         alert('Invalid Amount');
        }
      })
-
+   }
 
    find_tag('close').addEventListener('click',function(){
       find_tag('modal').classList.remove('modal-box');

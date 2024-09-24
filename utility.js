@@ -26,3 +26,16 @@ const months = ["Jan","feb", "March", "April", "May", "June", "July", "August", 
    function time(){
      return `${hr}:${mnt}:${sec}`;
    }
+
+  
+   
+  //  get element by class
+  function getElementByClassNameAndIndex(className, index) {
+   
+    const elements = document.getElementsByClassName(className);
+   
+    
+      return elements[index];
+    }
+
+  
